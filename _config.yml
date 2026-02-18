@@ -1,7 +1,7 @@
 title: AndProducers
 tagline: The modern handbook for marketing production
 description: Practical guides, templates, and operator stories for creative production, versioning, DCO, and AI-assisted workflows.
-url: ""  # leave blank for project pages; set to https://andproducers.com if using a custom domain
+url: "https://andproducers.com" # leave blank for project pages; set to https://andproducers.com if using a custom domain
 baseurl: ""  # if using https://username.github.io/repo set baseurl to "/repo"
 markdown: kramdown
 permalink: pretty
