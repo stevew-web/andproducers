@@ -1,0 +1,35 @@
+title: AndProducers
+tagline: The modern handbook for marketing production
+description: Practical guides, templates, and operator stories for creative production, versioning, DCO, and AI-assisted workflows.
+url: ""  # leave blank for project pages; set to https://andproducers.com if using a custom domain
+baseurl: ""  # if using https://username.github.io/repo set baseurl to "/repo"
+markdown: kramdown
+permalink: pretty
+timezone: Europe/London
+
+# Build
+exclude:
+  - README.md
+  - CNAME
+
+# Site defaults
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+# Navigation
+nav:
+  - title: Start here
+    url: /start/
+  - title: Templates
+    url: /templates/
+  - title: Playbooks
+    url: /playbooks/
+  - title: Guides
+    url: /guides/
+  - title: Stories
+    url: /stories/
+  - title: About
+    url: /about/
