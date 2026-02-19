@@ -1,0 +1,13 @@
+<header>
+  <div class="container nav">
+    <div class="brand">
+      <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      <small>{{ site.tagline }}</small>
+    </div>
+    <nav class="menu" aria-label="Primary">
+      {% for item in site.nav %}
+        <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+      {% endfor %}
+    </nav>
+  </div>
+</header>
