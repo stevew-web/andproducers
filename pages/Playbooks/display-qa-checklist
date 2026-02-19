@@ -1,0 +1,44 @@
+---
+title: QA checklist for display ads
+permalink: /playbooks/display-qa-checklist/
+
+---
+
+## QA checklist for display ads (HTML5 / static)
+
+Use this before anything gets trafficked.
+
+### 1) Specs & packaging
+- Correct sizes (px), correct formats (JPG/PNG/GIF/HTML5)
+- File weight within limits
+- Correct naming convention (campaign, size, version)
+
+### 2) Click behaviour
+- Clickthrough works on all clickable elements (as required)
+- Correct landing URL + tracking (UTMs)
+- No accidental double-click areas
+
+### 3) Animation & timing (HTML5)
+- Animation length within platform policy
+- Loop rules followed (e.g., stop after X loops if required)
+- No jarring flashing / rapid transitions
+
+### 4) Rendering
+- Fonts load correctly (or safe fallbacks)
+- Images crisp (not stretched)
+- Copy fits across browsers/devices
+
+### 5) Compliance & claims
+- Legal line present where required
+- Claims substantiated (don’t imply what you can’t prove)
+- Correct trademark usage
+
+### 6) Edge cases
+- Missing image/video fallback behaviour
+- Slow connection behaviour
+- Final frame makes sense (brand + CTA)
+
+### Next step
+If approvals are slowing you down: **/guides/approval-workflows/**
+
+
