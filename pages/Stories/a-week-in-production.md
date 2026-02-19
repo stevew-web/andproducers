@@ -1,12 +1,12 @@
 ---
-title: A week in production: what really slows delivery
+title: "A week in production: what really slows delivery"
 permalink: /stories/a-week-in-production/
-
 ---
+
 
 # A week in production: what really slows delivery (and how teams fix it)
 
-Every “late” campaign usually has the same root causes — just with different costumes.
+Every “late” campaign usually has the same root causes - just with different costumes.
 
 ### The usual blockers
 1. **The brief wasn’t final**
