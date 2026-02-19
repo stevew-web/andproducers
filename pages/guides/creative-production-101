@@ -1,0 +1,40 @@
+---
+title: Creative Production 101
+permalink: /guides/creative-production-101/
+
+---
+
+## Creative Production 101: how modern marketing teams actually ship work
+
+This is the baseline operating system: a simple lifecycle you can reuse across channels.
+
+### The modern lifecycle (minimum viable process)
+1. **Brief**  
+   Align on the goal, audience, deliverables, specs, and “what good looks like”.
+2. **Build**  
+   Produce the master assets, then adapt for channels/sizes/variants.
+3. **QA**  
+   Check specs, links, legals, truncation, rendering, accessibility basics.
+4. **Approve**  
+   Keep approvals tight: one owner, one source of truth, clear deadlines.
+5. **Publish / Traffic**  
+   Get assets into platforms with the correct naming, tracking, and metadata.
+6. **Learn**  
+   Capture what broke, what slowed you down, and update the SOP.
+
+### Roles (keep it simple)
+- **Business owner**: decides the goal and accepts trade-offs.
+- **Producer / PM**: owns the plan, handoffs, timeline, and risk.
+- **Creative / Studio**: creates the assets to spec.
+- **QA / Ops**: catches issues before they hit the platform.
+- **Channel owner**: publishes/traffics and feeds back performance.
+
+### The three rules that prevent chaos
+1. **One source of truth** (one doc/sheet per campaign).
+2. **One approval owner** (they collect feedback, you don’t herd cats).
+3. **One naming system** (files, versions, and links are traceable).
+
+### Next step (do this today)
+Download and use the briefing template: **/templates/creative-brief-template/**
+
+
