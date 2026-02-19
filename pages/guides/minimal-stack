@@ -1,0 +1,32 @@
+---
+title: The minimal tech stack for a lean production team
+permalink: /guides/minimal-stack/
+
+---
+
+## The minimal tech stack for a lean production team (SME-friendly)
+
+Tools don’t fix process — but the right few tools remove friction.
+
+### The “core 5”
+1. **Docs + Sheets** (briefs, matrices, approval logs)
+2. **Asset storage** (clean folder structure + permissions)
+3. **Design** (one primary tool, consistent components)
+4. **Review** (one place for feedback, not email chains)
+5. **Automation** (only where it removes repetitive steps)
+
+### How to choose (quick criteria)
+- Longevity (will it still exist in 3 years?)
+- Integration simplicity (does it talk to your other tools?)
+- Low training burden (can a client use it?)
+- Clear ownership (who maintains it?)
+
+### What to avoid early
+- Overlapping tools (three reviewers, two PM tools, two DAMs)
+- “One tool to rule them all” promises
+- Anything that locks your files in proprietary formats
+
+### Next step
+Price it sensibly with SLAs: **/guides/pricing-models/**
+
+
