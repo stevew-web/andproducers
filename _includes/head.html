@@ -4,5 +4,5 @@
   <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-  <link rel="icon" href="data:,">
+  <link rel="icon" href="{{ '/assets/favicon/favicon.ico' | relative_url }}">
 </head>
