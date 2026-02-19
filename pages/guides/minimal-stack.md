@@ -4,7 +4,7 @@ permalink: /guides/minimal-stack/
 
 ---
 
-## The minimal tech stack for a lean production team (SME-friendly)
+# The minimal tech stack for a lean production team (SME-friendly)
 
 Tools don’t fix process — but the right few tools remove friction.
 
