@@ -4,7 +4,7 @@ permalink: /playbooks/display-qa-checklist/
 
 ---
 
-## QA checklist for display ads (HTML5 / static)
+# QA checklist for display ads (HTML5 / static)
 
 Use this before anything gets trafficked.
 
