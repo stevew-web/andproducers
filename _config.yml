@@ -10,7 +10,6 @@ timezone: Europe/London
 # Build
 exclude:
   - README.md
-  - CNAME
 
 # Site defaults
 defaults:
