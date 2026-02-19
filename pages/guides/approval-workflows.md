@@ -4,11 +4,11 @@ permalink: /guides/approval-workflows/
 
 ---
 
-## Approval workflows that don’t kill momentum (and still stay compliant)
+# Approval workflows that don’t kill momentum (and still stay compliant)
 
 Approvals fail because feedback is messy and ownership is unclear. Fix the system.
 
-### The three approval patterns
+## The three approval patterns
 #### A) Lightweight (SME / fast-moving)
 - One approver (business owner)
 - One review round
@@ -24,12 +24,12 @@ Approvals fail because feedback is messy and ownership is unclear. Fix the syste
 - Comments must be tagged: **must change** vs **nice to have**
 - Clear cut-off time, then publish
 
-### The rules
+## The rules
 - **One source of truth** (one link, not 12 PDFs)
 - **One owner** (they herd cats, not you)
 - **Two rounds max** (otherwise you’re re-briefing)
 
-### Next step
+## Next step
 Pair this with a better brief: **/templates/creative-brief-template/**
 
 
