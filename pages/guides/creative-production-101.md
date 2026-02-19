@@ -4,7 +4,7 @@ permalink: /guides/creative-production-101/
 
 ---
 
-## Creative Production 101: how modern marketing teams actually ship work
+# Creative Production 101: how modern marketing teams actually ship work
 
 This is the baseline operating system: a simple lifecycle you can reuse across channels.
 
