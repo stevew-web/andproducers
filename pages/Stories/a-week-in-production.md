@@ -4,7 +4,7 @@ permalink: /stories/a-week-in-production/
 
 ---
 
-## A week in production: what really slows delivery (and how teams fix it)
+# A week in production: what really slows delivery (and how teams fix it)
 
 Every “late” campaign usually has the same root causes — just with different costumes.
 
