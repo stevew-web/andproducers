@@ -3,11 +3,11 @@ title: AndProducers
 
 ---
 
-<span class="kicker">Templates • Playbooks • Operator stories</span>
+<span class="kicker">Templates • Playbooks • Stories from the trenches</span>
 
 <div class="hero">
   <h1>The modern handbook for marketing production.</h1>
-  <p>Practical guides, checklists, and templates for shipping creative faster — with fewer mistakes — across social, display, CRM, landing pages, and versioning at scale.</p>
+  <p>Practical guides, checklists, and templates for shipping creative faster, with fewer mistakes, across social, display, CRM, landing pages, and versioning at scale.</p>
   <p><a href="/start/">Start here</a> · <a href="/templates/">Grab templates</a> · <a href="/work-with-us/">Need help implementing?</a></p>
 </div>
 
