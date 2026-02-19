@@ -1,0 +1,35 @@
+---
+title: Approval workflows that don’t kill momentum
+permalink: /guides/approval-workflows/
+
+---
+
+## Approval workflows that don’t kill momentum (and still stay compliant)
+
+Approvals fail because feedback is messy and ownership is unclear. Fix the system.
+
+### The three approval patterns
+#### A) Lightweight (SME / fast-moving)
+- One approver (business owner)
+- One review round
+- Deadline enforced (“silence = approved” where appropriate)
+
+#### B) Regulated (health/finance/claims)
+- Separate **brand** and **compliance** checks
+- Pre-approved components (legal lines, claims, disclaimers)
+- Evidence logged for claims
+
+#### C) Enterprise (many stakeholders)
+- One approval owner aggregates feedback
+- Comments must be tagged: **must change** vs **nice to have**
+- Clear cut-off time, then publish
+
+### The rules
+- **One source of truth** (one link, not 12 PDFs)
+- **One owner** (they herd cats, not you)
+- **Two rounds max** (otherwise you’re re-briefing)
+
+### Next step
+Pair this with a better brief: **/templates/creative-brief-template/**
+
+
