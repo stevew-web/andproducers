@@ -31,3 +31,14 @@ ul.clean li:last-child{ border-bottom:none; }
 @media (max-width: 720px){
   .hero h1{ font-size:28px; }
 }
+a.cta{
+  display:inline-block;
+  padding:10px 14px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:#111827;
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+}
+a.cta:hover{ opacity:0.92; }
