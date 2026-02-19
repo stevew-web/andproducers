@@ -1,22 +1,54 @@
 ---
 title: Work with us
 permalink: /work-with-us/
+---
+
+# Work with ProductionStudio
+
+If you’ve found AndProducers useful and you want a team to **implement this for you**, ProductionStudio can help you ship creative faster - with fewer rounds, cleaner workflows, and production that scales.
 
 ---
 
-## Work with ProductionStudio
+## What we do
+**Marketing production, end-to-end**, typically covering:
 
-If you’re here because you need a production partner (not just advice), ProductionStudio can help you implement the workflows and ship assets end‑to‑end.
+- **Master asset production** (paid social, display, CRM, landing pages)
+- **Versioning & personalisation at scale** (DCO / modular creative systems)
+- **Production ops + QA** (process, templates, approvals, governance)
 
-### Typical support
-- Master asset production (social, display, CRM, landing pages)
-- Versioning & personalisation at scale (DCO)
-- Production ops: process, QA, governance, templates
+---
 
-### How to start
-1. Share a campaign brief (or your current mess).
-2. We’ll propose a simple delivery plan and cost model.
-3. We build, QA, and ship — with the process documented so you can keep it rolling.
+## When we’re a good fit
+You’ll get the most value if you’re dealing with one or more of these:
 
-> Replace this page with your preferred PS URL and CTA when ready.
+- You’re producing lots of assets and variants and it’s getting messy  
+- Approvals are slowing everything down  
+- Your team is drowning in “amends” and rework  
+- You need a reliable partner to build, version, QA, and deliver to spec
+
+---
+
+## How it works
+1) **Quick call (20 mins):** understand the ask and volumes  
+2) **Simple plan:** timeline, deliverables, SLA, and pricing  
+3) **We ship:** build + QA + delivery, with the process documented
+
+---
+
+## Start here (CTA)
+**Send us your brief (or your current chaos)** and we’ll come back with a recommended delivery approach.
+
+<a href="https://productionstudio.co" class="cta" target="_blank" rel="noopener">Visit ProductionStudio →</a>
+
+<p style="margin-top:10px; color:#6b7280; font-size:14px;">
+Prefer email? Add a mailto link here (e.g. <a href="mailto:hello@productionstudio.co">hello@productionstudio.co</a>).
+</p>
+
+---
+
+## What you get
+- Clear scope and delivery plan  
+- A “source of truth” workflow (briefs + matrices + approvals)  
+- Assets produced to spec with QA baked in  
+- A system you can reuse for future campaigns
 
