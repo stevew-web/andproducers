@@ -35,13 +35,13 @@ You’ll get the most value if you’re dealing with one or more of these:
 
 ---
 
-## Start here (CTA)
+## Start here
 **Send us your brief (or your current chaos)** and we’ll come back with a recommended delivery approach.
 
-<a href="https://productionstudio.co" class="cta" target="_blank" rel="noopener">Visit ProductionStudio →</a>
+<a href="https://productionstud.io" class="cta" target="_blank" rel="noopener">Visit ProductionStudio</a>
 
 <p style="margin-top:10px; color:#6b7280; font-size:14px;">
-Prefer email? Add a mailto link here (e.g. <a href="mailto:hello@productionstudio.co">hello@productionstudio.co</a>).
+Prefer email? <a href="mailto:hello@productionstudio.co">hello@productionstudio.co</a>.
 </p>
 
 ---
