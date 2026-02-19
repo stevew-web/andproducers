@@ -4,7 +4,7 @@ permalink: /guides/pricing-models/
 
 ---
 
-## How to price creative production: retainers, capacity, and SLAs
+# How to price creative production: retainers, capacity, and SLAs
 
 Pricing works when it reflects how production actually operates: **throughput + risk + urgency**.
 
