@@ -1,0 +1,33 @@
+/* AndProducers - minimal, fast, readable */
+:root { --max: 980px; --muted: #6b7280; --border: #e5e7eb; --bg: #ffffff; --ink: #111827; --link: #2563eb; }
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; background:var(--bg); color:var(--ink); font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; }
+a{ color:var(--link); text-decoration:none; }
+a:hover{ text-decoration:underline; }
+.container{ max-width:var(--max); margin:0 auto; padding:24px; }
+header{ border-bottom:1px solid var(--border); background:#fff; position:sticky; top:0; }
+.nav{ display:flex; gap:14px; flex-wrap:wrap; align-items:center; justify-content:space-between; }
+.brand{ display:flex; flex-direction:column; gap:2px; }
+.brand a{ font-weight:700; letter-spacing:-0.02em; color:var(--ink); }
+.brand small{ color:var(--muted); }
+.menu{ display:flex; gap:14px; flex-wrap:wrap; }
+.menu a{ color:var(--ink); padding:6px 8px; border-radius:8px; }
+.menu a:hover{ background:#f3f4f6; text-decoration:none; }
+.hero{ padding:28px 0 18px; }
+.hero h1{ font-size:34px; line-height:1.15; margin:0 0 10px; letter-spacing:-0.03em; }
+.hero p{ margin:0 0 14px; color:var(--muted); max-width:70ch; }
+.kicker{ display:inline-block; font-size:13px; color:var(--muted); border:1px solid var(--border); padding:6px 10px; border-radius:999px; }
+.grid{ display:grid; grid-template-columns: repeat(12, 1fr); gap:14px; }
+.card{ border:1px solid var(--border); border-radius:14px; padding:16px; background:#fff; }
+.card h3{ margin:0 0 6px; letter-spacing:-0.02em; }
+.card p{ margin:0; color:var(--muted); }
+.card .meta{ margin-top:10px; font-size:13px; color:var(--muted); }
+hr{ border:none; border-top:1px solid var(--border); margin:24px 0; }
+footer{ border-top:1px solid var(--border); color:var(--muted); font-size:14px; padding:18px 0; }
+.badge{ display:inline-block; font-size:12px; padding:4px 8px; border:1px solid var(--border); border-radius:999px; color:var(--muted); }
+ul.clean{ list-style:none; padding:0; margin:0; }
+ul.clean li{ padding:10px 0; border-bottom:1px solid var(--border); }
+ul.clean li:last-child{ border-bottom:none; }
+@media (max-width: 720px){
+  .hero h1{ font-size:28px; }
+}
