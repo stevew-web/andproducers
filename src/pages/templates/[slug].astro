@@ -1,0 +1,30 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const templates = await getCollection('templates');
+  return templates.map(tmpl => ({
+    params: { slug: tmpl.slug },
+    props: { tmpl },
+  }));
+}
+
+interface Props {
+  tmpl: CollectionEntry<'templates'>;
+}
+
+const { tmpl } = Astro.props;
+const { Content } = await tmpl.render();
+---
+
+<ArticleLayout
+  title={tmpl.data.title}
+  description={tmpl.data.description}
+  pubDate={tmpl.data.pubDate}
+  topic={tmpl.data.topic}
+  download={tmpl.data.download}
+  type="template"
+>
+  <Content />
+</ArticleLayout>

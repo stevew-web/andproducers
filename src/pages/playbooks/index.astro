@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { TOPIC_LABELS } from '../../utils/topics';
+
+const allPlaybooks = await getCollection('playbooks');
+const sorted = allPlaybooks.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout
+  title="Playbooks — AndProducers"
+  description="Quick SOPs and step-by-step playbooks for shipping creative safely and consistently."
+>
+  <div class="page-header">
+    <div class="container">
+      <span class="content-type" style="margin-bottom:0.75rem;display:block">Playbooks</span>
+      <h1>Playbooks</h1>
+      <p>Quick SOPs for shipping creative safely. Designed to be printed, shared, or dropped into your own documentation.</p>
+    </div>
+  </div>
+
+  <div class="container" style="margin-top:var(--s-12)">
+    <div class="ad-slot ad-slot-banner" aria-hidden="true" style="margin-bottom:var(--s-10)">
+      <span>Advertisement</span>
+    </div>
+
+    {sorted.length === 0 ? (
+      <div style="text-align:center;padding:var(--s-20);color:var(--ink-3)">
+        <p>Playbooks coming soon.</p>
+      </div>
+    ) : (
+      <div class="grid-3">
+        {sorted.map(pb => (
+          <a href={`/playbooks/${pb.slug}`} class="card">
+            <div class="card-body">
+              <div>
+                <span class="content-type" style="display:block;margin-bottom:0.5rem">Playbook</span>
+                <span class={`topic-pill ${pb.data.topic}`}>{TOPIC_LABELS[pb.data.topic]}</span>
+              </div>
+              <h2 class="card-title">{pb.data.title}</h2>
+              <p class="card-description">{pb.data.description}</p>
+              <div class="card-meta">
+                <span>{new Intl.DateTimeFormat('en-GB', { day:'numeric', month:'short', year:'numeric' }).format(pb.data.pubDate)}</span>
+                {pb.data.download && <span class="download-badge">↓ Free download</span>}
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    )}
+  </div>
+</BaseLayout>
+
+<style>
+.page-header { background: var(--white); border-bottom: 1px solid var(--rule); padding-block: var(--s-12) var(--s-10); }
+.page-header h1 { margin-bottom: var(--s-4); }
+.page-header p { font-size: var(--text-lg); color: var(--ink-2); max-width: 55ch; }
+.download-badge { display: inline-flex; font-size: var(--text-xs); font-weight: 600; color: var(--accent); background: var(--accent-light); padding: 2px 8px; border-radius: 100px; }
+</style>

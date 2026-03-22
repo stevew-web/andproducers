@@ -1,0 +1,126 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: 'website' | 'article';
+}
+
+const {
+  title = 'AndProducers — The modern handbook for marketing production',
+  description = 'Practical guides, templates, playbooks and weekly industry articles for producers, creative ops, and marketing teams shipping creative at scale.',
+  image = '/images/og-default.png',
+  type = 'website',
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const fullTitle = title.includes('AndProducers') ? title : `${title} | AndProducers`;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content={Astro.generator} />
+
+  <!-- SEO -->
+  <title>{fullTitle}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalURL} />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content={type} />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={new URL(image, Astro.site)} />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={fullTitle} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={new URL(image, Astro.site)} />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate" type="application/rss+xml" title="AndProducers RSS" href="/rss.xml" />
+
+  <!-- Google AdSense — replace ca-pub-XXXXXXXXXX with your publisher ID -->
+  <!-- Uncomment once approved:
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
+  -->
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-nav">
+    <div class="container">
+      <a href="/" class="nav-logo">And<span>Producers</span></a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="/articles">Articles</a></li>
+          <li><a href="/guides">Guides</a></li>
+          <li><a href="/templates">Templates</a></li>
+          <li><a href="/playbooks">Playbooks</a></li>
+          <li><a href="https://productionstudio.com" class="nav-cta" target="_blank" rel="noopener">Need help? →</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page content -->
+  <main>
+    <slot />
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="nav-logo">And<span>Producers</span></a>
+          <p>The modern handbook for marketing production teams.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Content</h4>
+          <ul>
+            <li><a href="/articles">Articles</a></li>
+            <li><a href="/guides">Guides</a></li>
+            <li><a href="/templates">Templates</a></li>
+            <li><a href="/playbooks">Playbooks</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Topics</h4>
+          <ul>
+            <li><a href="/topic/production-ops">Production Ops</a></li>
+            <li><a href="/topic/creative-strategy">Creative Strategy</a></li>
+            <li><a href="/topic/in-housing">In-housing</a></li>
+            <li><a href="/topic/martech">Martech & Adtech</a></li>
+            <li><a href="/topic/social-content">Social & Content</a></li>
+            <li><a href="/topic/video-motion">Video & Motion</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/about">About</a></li>
+            <li><a href="/rss.xml">RSS Feed</a></li>
+            <li><a href="https://productionstudio.com" target="_blank" rel="noopener">ProductionStudio</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; {new Date().getFullYear()} AndProducers. All rights reserved.</p>
+        <a href="https://productionstudio.com" class="footer-ps-link" target="_blank" rel="noopener">
+          Need implementation help? → ProductionStudio
+        </a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

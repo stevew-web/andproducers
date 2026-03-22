@@ -1,0 +1,30 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const playbooks = await getCollection('playbooks');
+  return playbooks.map(pb => ({
+    params: { slug: pb.slug },
+    props: { pb },
+  }));
+}
+
+interface Props {
+  pb: CollectionEntry<'playbooks'>;
+}
+
+const { pb } = Astro.props;
+const { Content } = await pb.render();
+---
+
+<ArticleLayout
+  title={pb.data.title}
+  description={pb.data.description}
+  pubDate={pb.data.pubDate}
+  topic={pb.data.topic}
+  download={pb.data.download}
+  type="playbook"
+>
+  <Content />
+</ArticleLayout>

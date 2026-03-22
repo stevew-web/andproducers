@@ -1,0 +1,392 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { TOPIC_LABELS, TOPIC_DESCRIPTIONS } from '../utils/topics';
+
+const allArticles = await getCollection('articles');
+const allGuides = await getCollection('guides');
+const allTemplates = await getCollection('templates');
+
+const sortedArticles = allArticles.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const featuredArticle = sortedArticles.find(a => a.data.featured) ?? sortedArticles[0];
+const latestArticles = sortedArticles.filter(a => a.slug !== featuredArticle?.slug).slice(0, 6);
+const featuredGuides = allGuides.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0, 3);
+const featuredTemplates = allTemplates.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0, 3);
+
+const topics = ['production-ops', 'creative-strategy', 'in-housing', 'martech', 'social-content', 'video-motion'];
+---
+
+<BaseLayout>
+
+  <!-- Hero masthead -->
+  <section class="masthead">
+    <div class="container">
+      <div class="masthead-inner">
+        <div class="masthead-kicker">
+          <span class="kicker-dot"></span>
+          The modern handbook for marketing production
+        </div>
+        <h1 class="masthead-title">
+          Built for<br/>
+          <em>producers</em> who<br/>
+          ship.
+        </h1>
+        <p class="masthead-sub">
+          Guides, templates, playbooks, and weekly industry articles for creative ops, producers, and marketing teams shipping at scale.
+        </p>
+        <div class="masthead-actions">
+          <a href="/articles" class="btn-primary">Read the latest</a>
+          <a href="/templates" class="btn-outline">Free templates →</a>
+        </div>
+      </div>
+      <div class="masthead-stat-row">
+        <div class="masthead-stat"><strong>6</strong> topic pillars</div>
+        <div class="masthead-stat-div"></div>
+        <div class="masthead-stat"><strong>Weekly</strong> articles</div>
+        <div class="masthead-stat-div"></div>
+        <div class="masthead-stat"><strong>Free</strong> downloads</div>
+        <div class="masthead-stat-div"></div>
+        <div class="masthead-stat"><strong>No</strong> sign-up required</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ad slot: homepage leaderboard -->
+  <div class="container">
+    <div class="ad-slot ad-slot-banner" aria-hidden="true">
+      <span>Advertisement</span>
+    </div>
+  </div>
+
+  <!-- Featured article -->
+  {featuredArticle && (
+    <section class="mt-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Featured</h2>
+        </div>
+        <a href={`/articles/${featuredArticle.slug}`} class="card-featured">
+          <div class="card-image featured-placeholder" data-topic={featuredArticle.data.topic}>
+            {featuredArticle.data.image
+              ? <img src={featuredArticle.data.image} alt={featuredArticle.data.imageAlt ?? featuredArticle.data.title} loading="eager" />
+              : <div class="topic-image-placeholder"><span>{TOPIC_LABELS[featuredArticle.data.topic]}</span></div>
+            }
+          </div>
+          <div class="card-body">
+            <div>
+              <div class="article-meta-top" style="margin-bottom:1rem">
+                <span class={`topic-pill ${featuredArticle.data.topic}`}>{TOPIC_LABELS[featuredArticle.data.topic]}</span>
+                <span class="content-type">Article</span>
+              </div>
+              <h3 class="card-title" style="font-size:clamp(1.5rem,3vw,2.5rem);margin-bottom:1rem">{featuredArticle.data.title}</h3>
+              <p class="card-description" style="font-size:1.05rem">{featuredArticle.data.description}</p>
+            </div>
+            <div class="card-meta">
+              <span>{new Intl.DateTimeFormat('en-GB', { day:'numeric', month:'long', year:'numeric' }).format(featuredArticle.data.pubDate)}</span>
+              {featuredArticle.data.readingTime && <><span>·</span><span>{featuredArticle.data.readingTime} min read</span></>}
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+  )}
+
+  <!-- Latest articles grid -->
+  {latestArticles.length > 0 && (
+    <section class="mt-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Latest articles</h2>
+          <a href="/articles">View all →</a>
+        </div>
+        <div class="grid-3">
+          {latestArticles.map(article => (
+            <a href={`/articles/${article.slug}`} class="card">
+              <div class="card-image">
+                {article.data.image
+                  ? <img src={article.data.image} alt={article.data.imageAlt ?? article.data.title} loading="lazy" />
+                  : <div class={`topic-card-bg ${article.data.topic}`}><span>{TOPIC_LABELS[article.data.topic]}</span></div>
+                }
+              </div>
+              <div class="card-body">
+                <span class={`topic-pill ${article.data.topic}`}>{TOPIC_LABELS[article.data.topic]}</span>
+                <h3 class="card-title">{article.data.title}</h3>
+                <p class="card-description">{article.data.description}</p>
+                <div class="card-meta">
+                  <span>{new Intl.DateTimeFormat('en-GB', { day:'numeric', month:'short', year:'numeric' }).format(article.data.pubDate)}</span>
+                  {article.data.readingTime && <><span>·</span><span>{article.data.readingTime} min</span></>}
+                  {article.data.download && <span class="download-badge">↓ Download</span>}
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Ad slot: mid-page -->
+  <div class="container" style="margin-top:var(--s-12)">
+    <div class="ad-slot ad-slot-banner" aria-hidden="true">
+      <span>Advertisement</span>
+    </div>
+  </div>
+
+  <!-- Topic pillars -->
+  <section class="mt-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Browse by topic</h2>
+      </div>
+      <div class="grid-3">
+        {topics.map(topic => (
+          <a href={`/topic/${topic}`} class="topic-card">
+            <div class={`topic-card-accent ${topic}`}></div>
+            <div class="topic-card-body">
+              <span class={`topic-pill ${topic}`}>{TOPIC_LABELS[topic]}</span>
+              <p>{TOPIC_DESCRIPTIONS[topic]}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Guides row -->
+  {featuredGuides.length > 0 && (
+    <section class="mt-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Guides</h2>
+          <a href="/guides">View all →</a>
+        </div>
+        <div class="grid-3">
+          {featuredGuides.map(guide => (
+            <a href={`/guides/${guide.slug}`} class="card">
+              <div class="card-body">
+                <div>
+                  <span class="content-type" style="margin-bottom:0.5rem;display:block">Guide</span>
+                  <span class={`topic-pill ${guide.data.topic}`}>{TOPIC_LABELS[guide.data.topic]}</span>
+                </div>
+                <h3 class="card-title">{guide.data.title}</h3>
+                <p class="card-description">{guide.data.description}</p>
+                {guide.data.download && (
+                  <div class="card-meta">
+                    <span class="download-badge">↓ Free download</span>
+                  </div>
+                )}
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Templates row -->
+  {featuredTemplates.length > 0 && (
+    <section class="mt-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Free templates</h2>
+          <a href="/templates">View all →</a>
+        </div>
+        <div class="grid-3">
+          {featuredTemplates.map(tmpl => (
+            <a href={`/templates/${tmpl.slug}`} class="card template-card">
+              <div class="card-body">
+                <div class="template-card-top">
+                  <span class={`topic-pill ${tmpl.data.topic}`}>{TOPIC_LABELS[tmpl.data.topic]}</span>
+                  <span class="file-type-badge">{tmpl.data.fileType}</span>
+                </div>
+                <h3 class="card-title">{tmpl.data.title}</h3>
+                <p class="card-description">{tmpl.data.description}</p>
+                <div class="card-meta">
+                  <span class="download-badge">↓ Free download</span>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- ProductionStudio CTA section -->
+  <section class="mt-section">
+    <div class="container">
+      <div class="ps-cta">
+        <div class="ps-cta-text">
+          <h3>Need implementation help?</h3>
+          <p>AndProducers gives you the knowledge. ProductionStudio delivers the work — creative production infrastructure, tooling, and ops for ambitious marketing teams.</p>
+        </div>
+        <a href="https://productionstudio.com" class="btn-ps" target="_blank" rel="noopener">
+          Visit ProductionStudio →
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+/* Masthead */
+.masthead {
+  background: var(--ink);
+  color: var(--paper);
+  padding-block: var(--s-20) var(--s-12);
+  overflow: hidden;
+  position: relative;
+}
+.masthead::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: var(--accent);
+  opacity: 0.07;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.masthead-inner { max-width: 700px; }
+.masthead-kicker {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-4);
+  margin-bottom: var(--s-6);
+}
+.kicker-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: inline-block;
+}
+.masthead-title {
+  font-size: clamp(3rem, 7vw, var(--text-6xl));
+  font-weight: 900;
+  line-height: 1.0;
+  color: var(--white);
+  letter-spacing: -0.03em;
+  margin-bottom: var(--s-6);
+}
+.masthead-title em {
+  font-style: italic;
+  color: var(--accent);
+}
+.masthead-sub {
+  font-size: var(--text-lg);
+  color: #b0ada8;
+  max-width: 52ch;
+  line-height: 1.7;
+  margin-bottom: var(--s-8);
+}
+.masthead-actions { display: flex; align-items: center; gap: var(--s-4); flex-wrap: wrap; }
+.btn-primary {
+  background: var(--accent);
+  color: var(--white);
+  padding: var(--s-3) var(--s-8);
+  border-radius: var(--r-md);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.btn-primary:hover { background: #a33509; }
+.btn-outline {
+  color: var(--paper);
+  font-weight: 500;
+  text-decoration: none;
+  padding: var(--s-3) var(--s-4);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: var(--r-md);
+  transition: border-color 0.15s, color 0.15s;
+  font-size: var(--text-sm);
+}
+.btn-outline:hover { border-color: var(--paper); color: var(--white); }
+.masthead-stat-row {
+  display: flex;
+  align-items: center;
+  gap: var(--s-6);
+  margin-top: var(--s-12);
+  padding-top: var(--s-8);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  flex-wrap: wrap;
+}
+.masthead-stat { font-size: var(--text-sm); color: #b0ada8; }
+.masthead-stat strong { color: var(--white); font-weight: 600; }
+.masthead-stat-div { width: 1px; height: 16px; background: rgba(255,255,255,0.15); }
+
+/* Topic card bg placeholders */
+.topic-card-bg, .topic-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.topic-card-bg.production-ops    { background: #fff0e8; color: var(--c-ops); }
+.topic-card-bg.creative-strategy { background: #e8f0fb; color: var(--c-strategy); }
+.topic-card-bg.in-housing        { background: #eaf4ec; color: var(--c-inhouse); }
+.topic-card-bg.martech           { background: #f3eeff; color: var(--c-martech); }
+.topic-card-bg.social-content    { background: #fce7f0; color: var(--c-social); }
+.topic-card-bg.video-motion      { background: #e0f5f8; color: var(--c-video); }
+.topic-image-placeholder         { background: var(--paper-2); color: var(--ink-3); }
+
+/* Topic cards (pillar section) */
+.topic-card {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: block;
+}
+.topic-card:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(0,0,0,0.08); }
+.topic-card-accent { height: 4px; }
+.topic-card-accent.production-ops    { background: var(--c-ops); }
+.topic-card-accent.creative-strategy { background: var(--c-strategy); }
+.topic-card-accent.in-housing        { background: var(--c-inhouse); }
+.topic-card-accent.martech           { background: var(--c-martech); }
+.topic-card-accent.social-content    { background: var(--c-social); }
+.topic-card-accent.video-motion      { background: var(--c-video); }
+.topic-card-body { padding: var(--s-5); display: flex; flex-direction: column; gap: var(--s-3); }
+.topic-card-body p { font-size: var(--text-sm); color: var(--ink-2); line-height: 1.6; }
+
+/* Template card */
+.template-card-top { display: flex; align-items: center; justify-content: space-between; }
+.file-type-badge {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--ink-3);
+  background: var(--paper-2);
+  padding: 2px 8px;
+  border-radius: var(--r-sm);
+}
+
+/* Download badge */
+.download-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-light);
+  padding: 2px 8px;
+  border-radius: 100px;
+}
+</style>

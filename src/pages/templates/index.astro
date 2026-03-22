@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { TOPIC_LABELS } from '../../utils/topics';
+
+const allTemplates = await getCollection('templates');
+const sorted = allTemplates.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout
+  title="Free Templates — AndProducers"
+  description="Free downloadable templates for creative production — briefs, QA checklists, content matrices, playbooks and more. No sign-up required."
+>
+  <div class="page-header">
+    <div class="container">
+      <span class="content-type" style="margin-bottom:0.75rem;display:block">Templates</span>
+      <h1>Free templates</h1>
+      <p>Download and use immediately. No sign-up, no paywall — just the tools you need to produce better work.</p>
+    </div>
+  </div>
+
+  <div class="container" style="margin-top:var(--s-12)">
+    <div class="ad-slot ad-slot-banner" aria-hidden="true" style="margin-bottom:var(--s-10)">
+      <span>Advertisement</span>
+    </div>
+
+    {sorted.length === 0 ? (
+      <div style="text-align:center;padding:var(--s-20);color:var(--ink-3)">
+        <p>Templates coming soon.</p>
+      </div>
+    ) : (
+      <div class="grid-3">
+        {sorted.map(tmpl => (
+          <a href={`/templates/${tmpl.slug}`} class="card template-card">
+            <div class="card-body">
+              <div class="template-card-top">
+                <span class={`topic-pill ${tmpl.data.topic}`}>{TOPIC_LABELS[tmpl.data.topic]}</span>
+                <span class="file-type-badge">{tmpl.data.fileType}</span>
+              </div>
+              <h2 class="card-title">{tmpl.data.title}</h2>
+              <p class="card-description">{tmpl.data.description}</p>
+              <div class="card-meta">
+                <span class="download-badge">↓ Free download</span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    )}
+  </div>
+</BaseLayout>
+
+<style>
+.page-header { background: var(--white); border-bottom: 1px solid var(--rule); padding-block: var(--s-12) var(--s-10); }
+.page-header h1 { margin-bottom: var(--s-4); }
+.page-header p { font-size: var(--text-lg); color: var(--ink-2); max-width: 55ch; }
+.template-card-top { display: flex; align-items: center; justify-content: space-between; }
+.file-type-badge { font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.08em; color: var(--ink-3); background: var(--paper-2); padding: 2px 8px; border-radius: var(--r-sm); }
+.download-badge { display: inline-flex; font-size: var(--text-xs); font-weight: 600; color: var(--accent); background: var(--accent-light); padding: 2px 8px; border-radius: 100px; }
+</style>
