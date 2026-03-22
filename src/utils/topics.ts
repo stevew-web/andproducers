@@ -12,6 +12,6 @@ export const TOPIC_DESCRIPTIONS: Record<string, string> = {
   'creative-strategy':  'Concepting, briefing, campaign architecture, and creative effectiveness.',
   'in-housing':         'Building internal studios, managing agencies, and structuring creative ops inside brands.',
   'martech':            'DCO, DAMs, CDPs, ad tech, and the tools that power modern production.',
-  'social-content':     'Content production for social platforms — formats, workflows, and volume production.',
+  'social-content':     'Content production for social platforms - formats, workflows, and volume production.',
   'video-motion':       'Video production, motion design, editing pipelines, and broadcast-to-digital.',
 };

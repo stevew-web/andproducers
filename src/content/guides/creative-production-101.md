@@ -1,6 +1,6 @@
 ---
 title: "Creative Production 101"
-description: "A clear, modern delivery lifecycle — brief to build to QA to approve to publish — with roles, handoffs, and the minimum viable process."
+description: "A clear, modern delivery lifecycle - brief to build to QA to approve to publish - with roles, handoffs, and the minimum viable process."
 pubDate: 2026-03-01
 topic: production-ops
 featured: true
@@ -11,7 +11,7 @@ A clear, modern delivery lifecycle for marketing production teams.
 
 ## What this guide covers
 
-This guide walks through the complete creative production lifecycle — from brief to live asset — with role definitions, handoff checkpoints, and the "minimum viable process" for teams that need to move fast without building chaos.
+This guide walks through the complete creative production lifecycle - from brief to live asset - with role definitions, handoff checkpoints, and the "minimum viable process" for teams that need to move fast without building chaos.
 
 It's written for producers, creative ops leads, project managers, and anyone responsible for getting creative from brief to build to market.
 
@@ -19,11 +19,11 @@ It's written for producers, creative ops leads, project managers, and anyone res
 
 A working production lifecycle has five stages:
 
-1. **Brief → Align** — Define the work before building begins
-2. **Build → Review** — Produce to spec, review against brief
-3. **Approve → Sign off** — Formal stakeholder approval at each gate
-4. **QA → Certify** — Technical verification before handoff
-5. **Publish → Handoff** — Complete package to trafficking or platform
+1. **Brief → Align** - Define the work before building begins
+2. **Build → Review** - Produce to spec, review against brief
+3. **Approve → Sign off** - Formal stakeholder approval at each gate
+4. **QA → Certify** - Technical verification before handoff
+5. **Publish → Handoff** - Complete package to trafficking or platform
 
 Each stage has an owner, an input, and an output. When all five are defined and understood by everyone on the team, production becomes predictable.
 
@@ -33,10 +33,10 @@ The brief is the foundation. A brief that hasn't been aligned is a brief that wi
 
 Brief alignment means getting sign-off from four parties before production begins:
 
-- **Media/channel** — confirmed specs, placements, and volumes
-- **Legal/compliance** — any restrictions, disclaimers, or approval requirements flagged upfront
-- **Creative** — scope is achievable within the timeline and budget
-- **Brand/marketing** — messaging, tone, and visual direction confirmed
+- **Media/channel** - confirmed specs, placements, and volumes
+- **Legal/compliance** - any restrictions, disclaimers, or approval requirements flagged upfront
+- **Creative** - scope is achievable within the timeline and budget
+- **Brand/marketing** - messaging, tone, and visual direction confirmed
 
 The brief alignment stage ends when all four parties have reviewed and confirmed. Not before.
 
@@ -52,13 +52,13 @@ A minimum ready-for-review checklist for display advertising:
 - Animation loops are within spec (file size, loop count, frame rate)
 - File sizes are within trafficking limits
 
-If the asset doesn't pass this check, it doesn't go to review. Review cycles are expensive — don't use them for things production should have caught.
+If the asset doesn't pass this check, it doesn't go to review. Review cycles are expensive - don't use them for things production should have caught.
 
 ## Stage 3: Approve → Sign off
 
 Approval is a formal gate. Named approvers review the work and give explicit sign-off.
 
-Define your approval chain in the brief: who needs to approve, in what order, and what "approved" means (email confirmation, tool sign-off, PDF signature — pick one and stick to it).
+Define your approval chain in the brief: who needs to approve, in what order, and what "approved" means (email confirmation, tool sign-off, PDF signature - pick one and stick to it).
 
 Avoid approval by silence. If an approver doesn't respond, escalate. Don't assume silence is agreement.
 
@@ -78,7 +78,7 @@ A QA checklist specific to each asset type you produce is one of the most valuab
 
 ## Stage 5: Publish → Handoff
 
-The handoff is a complete, structured package — not a folder dump. Define what a complete handoff looks like:
+The handoff is a complete, structured package - not a folder dump. Define what a complete handoff looks like:
 
 - Naming convention (example: `CLIENT_CAMPAIGN_FORMAT_SIZE_v1.zip`)
 - Folder structure
@@ -100,7 +100,7 @@ When the handoff template is defined, it's the same every time. New team members
 
 ## Timing benchmarks
 
-These are rough guides — adjust for your team's volume and complexity:
+These are rough guides - adjust for your team's volume and complexity:
 
 - Brief alignment: 2–5 business days
 - Build time (per asset type): defined in your brief template

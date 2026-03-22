@@ -10,7 +10,7 @@ fileType: "PDF"
 
 ## What's included
 
-This template gives you a structured creative brief format designed to force alignment before production begins — the single highest-leverage thing any team can do to reduce rework and late-stage revisions.
+This template gives you a structured creative brief format designed to force alignment before production begins - the single highest-leverage thing any team can do to reduce rework and late-stage revisions.
 
 **The template covers:**
 
@@ -36,10 +36,10 @@ Open the PDF and save a copy for each new campaign. Fill in each section before 
 2. Has legal reviewed the brief for restrictions?
 3. Is the timeline achievable given the asset volume?
 4. Who are the named approvers, and in what order?
-5. What does "approved" look like — and what does "done" look like?
+5. What does "approved" look like - and what does "done" look like?
 
 Share it with your team as part of your brief alignment process.
 
 ---
 
-Free download — no sign-up required.
+Free download - no sign-up required.
