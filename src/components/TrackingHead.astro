@@ -1,10 +1,14 @@
 ---
 interface Props {
   clarityId: string;
+  gscVerification?: string;
 }
 
-const { clarityId } = Astro.props;
+const { clarityId, gscVerification } = Astro.props;
 ---
+
+<!-- Google Search Console Verification -->
+{gscVerification && <meta name="google-site-verification" content={gscVerification} />}
 
 <!-- Microsoft Clarity -->
 <script is:inline define:vars={{ clarityId }}>
