@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import TrackingHead from '../components/TrackingHead.astro';
 
 interface Props {
   title?: string;
@@ -47,6 +48,8 @@ const fullTitle = title.includes('AndProducers') ? title : `${title} | AndProduc
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="alternate" type="application/rss+xml" title="AndProducers RSS" href="/rss.xml" />
+
+  <TrackingHead clarityId="vzwehfiqji" />
 
   <!-- Google AdSense - replace ca-pub-XXXXXXXXXX with your publisher ID -->
   <!-- Uncomment once approved:
