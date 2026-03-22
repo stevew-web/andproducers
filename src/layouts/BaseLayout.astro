@@ -1,7 +1,6 @@
 ---
 import '../styles/global.css';
 import TrackingHead from '../components/TrackingHead.astro';
-import { Analytics } from '@vercel/analytics/astro';
 
 interface Props {
   title?: string;
@@ -126,6 +125,7 @@ const fullTitle = title.includes('AndProducers') ? title : `${title} | AndProduc
     </div>
   </footer>
 
-  <Analytics />
+  <!-- Vercel Analytics -->
+  <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
